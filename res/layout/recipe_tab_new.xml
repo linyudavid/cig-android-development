@@ -13,18 +13,12 @@
 		android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
 		>
-		<ImageView 
+		<TextView 
 			android:id="@+id/new_search_button"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="@string/main_search_button" 
+			android:text="Enter a New Recipe" 
 			/>
-		<EditText  
-		    android:id="@+id/new_search"
-		    android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-		    android:lines="1"
-		    />
 	</LinearLayout>
 	<ScrollView
 		android:id="@+id/mainscroll_layout"
@@ -88,13 +82,12 @@
 					android:layout_height="wrap_content"
 					android:text="Cusine"
 					/>
-				<ListView  
+				<Spinner  
 				    android:id="@+id/cuisine_new"
 				    android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:layout_column="1"
 					android:entries="@array/opt_cuisine_list"
-					android:choiceMode="singleChoice"
 				    />
 			</TableRow>	   
 			<TableRow

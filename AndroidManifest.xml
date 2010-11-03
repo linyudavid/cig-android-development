@@ -22,7 +22,9 @@
 
 	<activity android:name=".Options"></activity>
 <activity android:name=".MainMenu"></activity>
-<activity android:name=".NewRecipe"></activity>
+<activity android:name=".RecipeNew"></activity>
+<activity android:name=".RecipeEntry"></activity>
+<activity android:name=".RecipeIngredients"></activity>
 </application>
 
     <uses-sdk android:minSdkVersion="8" />

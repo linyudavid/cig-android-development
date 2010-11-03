@@ -1,8 +1,6 @@
 package com.recipesapp.basic;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,7 +8,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener; 
-import android.util.Log;
 import android.widget.Button;
 
 public class MainMenu extends Activity implements OnClickListener {
@@ -31,8 +28,8 @@ public class MainMenu extends Activity implements OnClickListener {
     	super.onCreateOptionsMenu(menu);
     	MenuInflater inf = getMenuInflater();
     	inf.inflate(R.menu.main_menu, menu);
-//    	menu.findItem(R.id.main_menu_new).setIntent(
-//    			new Intent(this, NewRecipe.class));
+    	menu.findItem(R.id.main_menu_new).setIntent(
+    			new Intent(this, RecipeNew.class));
 //    	menu.findItem(R.id.main_menu_search).setIntent(
 //    			new Intent(this, SearchRecipe.class));
     	menu.findItem(R.id.main_menu_options).setIntent(
@@ -53,7 +50,7 @@ public class MainMenu extends Activity implements OnClickListener {
     	Intent doMenuClick;
     	switch (thisView.getId()) {
     	case R.id.main_new_button:
-    		doMenuClick = new Intent(this, NewRecipe.class);
+    		doMenuClick = new Intent(this, RecipeNew.class);
     		startActivity(doMenuClick);
     		break;
     	case R.id.main_about_button:
