@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simply Recipes</string>
+    
+    <string name="main_search_button">Search</string>
+    <string name="main_new_button">Create New Recipe</string>
+    <string name="main_help_button">Help</string>
+    <string name="main_about_button">About</string>
+    <string name="main_exit_button">Quit</string>
+    
+	<string name="about_header">About Simply Recipes</string>
+	<string name="about_summary">Simply Recipes allows you to manage your recipes and share them with friends.</string>
+
+	<string name="main_menu_search">Search</string>
+	<string name="main_menu_searchshortcut">Find a Recipe</string>
+	<string name="main_menu_new">New</string>
+	<string name="main_menu_newshortcut">Create a New Recipe</string>
+	<string name="main_menu_options">Options</string>
+	<string name="main_menu_optionsshortcut">Your Preferences</string>
+	
+	<string name="opt_cuisine_title">Default Cuisine</string>
+	<string name="opt_cuisine_summary">Select the default cuisine for search and new recipes</string>
+	<string name="opt_search_title">Search</string>
+	<string name="opt_search_summary">Search ingredients by default</string>
+	<string name="opt_name_title">Your Nickname</string>
+	<string name="opt_name_summary">Enter a nickname to describe yourself</string>
+	
+    <string name="splash_header">Simply</string>
+    <string name="splash_footer">Recipes</string>
+	
+</resources>

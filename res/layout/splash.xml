@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/SplashLayoutRoot"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@color/splash_background">
+    <TextView
+        android:id="@+id/SplashHeader"
+        style="@style/SplashStyle"
+        android:text="@string/splash_header"
+        >
+    </TextView>
+    <ImageView
+        android:id="@+id/SplashImageCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/parrotrecipe"
+        >
+    </ImageView>
+    <TextView
+        android:id="@+id/SplashFooter"
+        style="@style/SplashStyle"
+        android:text="@string/splash_footer"
+        >
+    </TextView>
+</LinearLayout>

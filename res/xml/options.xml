@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="About You">
+		<EditTextPreference
+			android:title="@string/opt_name_title" 
+			android:summary="@string/opt_name_summary" 
+			android:order="1" 
+			android:key="text"
+			>
+		</EditTextPreference>
+	</PreferenceCategory>
+	<PreferenceCategory android:title="Search Settings">
+		<CheckBoxPreference 
+			android:title="@string/opt_search_title" 
+			android:summary="@string/opt_search_summary" 
+			android:defaultValue="true" 
+			android:order="2" 
+			android:key="check">
+		</CheckBoxPreference>
+	</PreferenceCategory>
+	<PreferenceCategory android:title="Personal Tastes">
+		<ListPreference 
+			android:title="@string/opt_cuisine_title" 
+			android:summary="@string/opt_cuisine_summary"
+			android:entries="@array/opt_cuisine_list" 
+			android:entryValues="@array/opt_cuisine_list" 
+			android:order="3"
+			android:key="list"
+			>
+		</ListPreference>
+	</PreferenceCategory>
+</PreferenceScreen>

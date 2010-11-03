@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="opt_cuisine_list">
+		<item>American</item>
+		<item>Thai</item>
+		<item>Mediteranean</item>
+		<item>Fusion</item>	
+	</string-array>
+</resources>
