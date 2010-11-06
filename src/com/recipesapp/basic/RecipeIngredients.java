@@ -47,18 +47,15 @@ public class RecipeIngredients extends ListActivity implements OnClickListener  
 	        if (view == null) 
 	        {
 	            view = ingredientInflater.inflate(R.layout.recipe_tab_ingredients_inflate, null);
-	
 	            contents = new ListContent();
-	            contents.text = (TextView) view.findViewById(R.id.TextView01);
-	            contents.text.setCompoundDrawables(view.getResources().getDrawable(R.drawable.icon), null, null, null);
-	
+	            contents.text = (EditText) view.findViewById(R.id.ingredient_first);
+	            contents.text.setCompoundDrawables(view.getResources().getDrawable(R.drawable.arrow_black), null, null, null);
 	            view.setTag(contents);
 	        } 
 	        else 
 	        {
 	            contents = (ListContent) view.getTag();
 	        }
-	
 	        
 	        contents.text.setText(IngredientListContents.get(position));
 	              return view;

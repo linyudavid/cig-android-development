@@ -27,5 +27,7 @@
 	
     <string name="splash_header">Simply</string>
     <string name="splash_footer">Recipes</string>
+    
+    <string name="mainnew_cuisine">Select a Cuisine</string>
 	
 </resources>
