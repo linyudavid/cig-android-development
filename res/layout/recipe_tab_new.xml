@@ -15,7 +15,7 @@
 		android:gravity="center"
 		>
 		<TextView 
-			android:id="@+id/new_search_button"
+			android:id="@+id/edit_recipe_title"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="Enter a New Recipe" 
@@ -63,7 +63,7 @@
 				android:prompt="@string/mainnew_cuisine"
 			    />
 			<EditText  
-			    android:id="@+id/description_new"
+			    android:id="@+id/steps_new"
 			    android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 			    android:lines="3"
@@ -82,14 +82,14 @@
 		   		>
 				<TableRow>
 					<Button 
-						android:id="@+id/save_recipe"
+						android:id="@+id/save_new_recipe"
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
 						android:layout_column="1"
 						android:text="Save" 
 						/>
 					<Button 
-						android:id="@+id/save_recipe"
+						android:id="@+id/cancel_new_recipe"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Cancel" 

@@ -14,34 +14,34 @@ public class RecipeNew extends TabActivity implements OnTabChangeListener {
 	Resources _res;
 	
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.recipe_tabs);
+    public void onCreate( Bundle savedInstanceState ) {
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.recipe_tabs );
         
         _tabHost = getTabHost();
         _res = getResources();
-        _tabHost.setOnTabChangedListener(this);
+        _tabHost.setOnTabChangedListener( this );
         
         TabHost.TabSpec _tabSpec;
         
-        _tabSpec = _tabHost.newTabSpec("recipes").setIndicator("Recipe", 
-        							  _res.getDrawable(R.drawable.recipes_tab))
-        				 .setContent(new Intent(this,RecipeEntry.class));
-        _tabHost.addTab(_tabSpec);
+        _tabSpec = _tabHost.newTabSpec("recipes").setIndicator( "Recipe", 
+        							  _res.getDrawable( R.drawable.recipes_tab ) )
+        				 .setContent( new Intent( this,RecipeEntry.class ) );
+        _tabHost.addTab( _tabSpec );
         
-        _tabSpec = _tabHost.newTabSpec("ingredients").setIndicator("Ingredients", 
-        							   _res.getDrawable(R.drawable.ingredients_tab))
-        				   .setContent(new Intent(this,RecipeIngredients.class));	
-        _tabHost.addTab(_tabSpec);        
+        _tabSpec = _tabHost.newTabSpec("ingredients").setIndicator( "Ingredients", 
+        							   _res.getDrawable( R.drawable.ingredients_tab ) )
+        				   .setContent( new Intent( this,RecipeIngredients.class ) );	
+        _tabHost.addTab( _tabSpec );        
       
         
         for(int i=0; i<_tabHost.getTabWidget().getChildCount(); i++)
         {
-        	_tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.LTGRAY);
+        	_tabHost.getTabWidget().getChildAt(i).setBackgroundColor( Color.LTGRAY );
         }
         
         _tabHost.getTabWidget().setCurrentTab(1);
-        _tabHost.getTabWidget().getChildAt(1).setBackgroundColor(Color.DKGRAY);
+        _tabHost.getTabWidget().getChildAt(1).setBackgroundColor( Color.DKGRAY );
         
     }
     
@@ -49,10 +49,10 @@ public class RecipeNew extends TabActivity implements OnTabChangeListener {
 	public void onTabChanged(String tabId) {
 		for(int i=0; i<_tabHost.getTabWidget().getChildCount(); i++)
         {
-        	_tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.LTGRAY);
+        	_tabHost.getTabWidget().getChildAt(i).setBackgroundColor( Color.LTGRAY );
         } 
 				
-		_tabHost.getTabWidget().getChildAt(_tabHost.getCurrentTab()).setBackgroundColor(Color.GRAY);
+		_tabHost.getTabWidget().getChildAt( _tabHost.getCurrentTab() ).setBackgroundColor( Color.GRAY );
 	}
     
 }

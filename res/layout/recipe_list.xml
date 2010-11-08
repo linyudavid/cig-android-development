@@ -11,20 +11,19 @@
 		android:id="@+id/ingredients_child"
 		android:layout_height="wrap_content" 
 		android:layout_width="fill_parent"
+		android:layout_gravity="center"
+		android:gravity="center"
 		android:paddingTop="10dp"
+		android:paddingBottom="10dp"
 		>
-		<EditText 
-			android:id="@+id/ingredient_text" 
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content" 
-			android:layout_weight="1">
-		</EditText>
-		<Button 
+		<TextView 
 			android:id="@+id/ingredient_button" 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" 
-			android:text="Add Ingredient">
-		</Button>
+			android:text="Your Recipes"
+			android:textSize="20dp"
+			>
+		</TextView>
 	</LinearLayout>
 
 	<ListView 

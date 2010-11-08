@@ -11,7 +11,14 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class MainMenu extends Activity implements OnClickListener {
-    /** Called when the activity is first created. */
+    
+	public static final String RecipeNamesPref = "RecipeNames";
+	public static final String NamePref = "Name";
+	public static final String CuisinePref = "Cuisine";
+	public static final String DescriptionPref = "Description";
+	public static final String StepsPref = "Steps";
+	public static final String SelectedRecipe = "SelectedRecipe";
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +28,8 @@ public class MainMenu extends Activity implements OnClickListener {
         about.setOnClickListener(this);
         Button newRecipe = (Button)this.findViewById(R.id.main_new_button);
         newRecipe.setOnClickListener(this);
+        Button listRecipe = (Button)this.findViewById(R.id.main_list_button);
+        listRecipe.setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +66,10 @@ public class MainMenu extends Activity implements OnClickListener {
     		doMenuClick = new Intent(this, About.class);
     		startActivity(doMenuClick);
     		break;
+    	case R.id.main_list_button:
+    		doMenuClick = new Intent(this, RecipeList.class);
+    		startActivity(doMenuClick);
+    		break;	
     	}
      }
     
