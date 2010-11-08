@@ -2,7 +2,6 @@ package com.recipesapp.basic;
 
 import java.util.ArrayList;
 
-import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -33,6 +32,7 @@ public class RecipeList extends ListActivity implements OnItemClickListener  {
 		{
 			_RecipeListContents.add( recipe );			
 		}
+		String[] anarray = {"hey","you"};
 		
 		recipeListView = (ListView) findViewById(android.R.id.list);
 		recipeListView.setAdapter( new ListViewAdapter(this) );

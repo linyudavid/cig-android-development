@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class RecipeEntry extends Activity implements OnClickListener  {
 	
@@ -40,6 +41,8 @@ public class RecipeEntry extends Activity implements OnClickListener  {
         	StepsText.setText( thisRecipe.getString( MainMenu.StepsPref, "" ) );
         	Spinner CuisineSelect = (Spinner)this.findViewById( R.id.cuisine_new );
         	CuisineSelect.setSelection( thisRecipe.getInt( MainMenu.CuisinePref, 0 ));
+        	TextView title = (TextView)this.findViewById( R.id.edit_recipe_title );
+        	title.setText( "Edit This Recipe" );
         }
 	}
 	
@@ -62,33 +65,31 @@ public class RecipeEntry extends Activity implements OnClickListener  {
 		
 		//Create or Open a Preference for all Recipe Names
 		SharedPreferences recipeName = getSharedPreferences( MainMenu.RecipeNamesPref, RecipeEntry.MODE_WORLD_READABLE);
-    	String recipeList = recipeName.getString( MainMenu.RecipeNamesPref, "New Recipe" );
+    	//Get the recipe list. If empty, the list will contain only "New Recipe"
+		String recipeList = recipeName.getString( MainMenu.RecipeNamesPref, "New Recipe" );
 		SharedPreferences.Editor recipeNameEdit = recipeName.edit();
     	EditText newRecipeNameView = (EditText)this.findViewById( R.id.name_new ); 
     	String newRecipeName = (String)newRecipeNameView.getText().toString();
+    	
+    	//We must have a name in order to save
     	if( null != newRecipeName )
     	{
+    		//Preserve the existing list and append the new name
     		recipeList = recipeList + "," + newRecipeName;
     		recipeNameEdit.putString( MainMenu.RecipeNamesPref, recipeList );
     		recipeNameEdit.commit();
     	
+    		//Create or open the new recipe as a SharedPreference: <name>_detail to identify the recipe record
 	    	String newRecipeDetail = newRecipeName + "_Detail";
 			SharedPreferences newRecipe = getSharedPreferences( newRecipeDetail, RecipeEntry.MODE_WORLD_READABLE);
 	    	SharedPreferences.Editor newRecipeEdit = newRecipe.edit();
+	    	//Store the recipe data for this recipe
 	    	newRecipeEdit.putString( MainMenu.NamePref, newRecipeName );
 	    	newRecipeEdit.putString( MainMenu.DescriptionPref, ((EditText)this.findViewById( R.id.description_new )).getText().toString() );
 	    	newRecipeEdit.putInt( MainMenu.CuisinePref, ((Spinner)this.findViewById( R.id.cuisine_new )).getSelectedItemPosition() );
 	    	newRecipeEdit.putString( MainMenu.StepsPref, ((EditText)this.findViewById( R.id.steps_new )).getText().toString() );
 	    	newRecipeEdit.commit();
 	    	
-	    	/*ListView IngredientsView = (ListView)this.findViewById( android.id.list );
-	    	ListAdapter IngredientsAdapter = IngredientsView.getAdapter();
-	    	EditText IngredientText;
-	    	for(int i=0; i<=IngredientsAdapter.getCount()-1;i++)
-	    	{
-	    		IngredientText = (EditText)IngredientsAdapter.getView( i, null, null );
-	    		newRecipeEdit.putString( "Ingredient_" + i, IngredientText.getText().toString() );
-	    	}*/
     	}
 	}
 		
