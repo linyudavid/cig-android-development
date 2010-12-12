@@ -2,11 +2,14 @@ package com.recipesapp.basic;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Toast;
 import android.content.SharedPreferences;
 import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import com.google.api.translate.Language;
+import com.google.api.translate.Translate;
 
 public class About extends Activity {
 
@@ -14,7 +17,25 @@ public class About extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
+        
+
+
+            Translate.setHttpReferrer("www.yoursite.com");
+
+            String translatedText = null;
+			try {
+				translatedText = Translate.execute("Bonjour le monde", Language.FRENCH, Language.ENGLISH);
+			} catch( Exception e ) {
+				e.printStackTrace();
+			}
+
+            System.out.println(translatedText);
+            Toast.makeText(this, translatedText, Toast.LENGTH_SHORT).show();    
     }
+      
+    	
+        
+    
     
     private static final String AboutPreference = "AboutLanguagePreference";
     private void savePreferences() {
@@ -22,6 +43,11 @@ public class About extends Activity {
     	SharedPreferences.Editor aboutEdit = aboutSharedPreferences.edit();
     	aboutEdit.putString( "Language", "English" );
     	aboutEdit.commit();
+    }
+    
+    private void onActivityResult()
+    {
+    	
     }
     
     private void restorePreferences() {

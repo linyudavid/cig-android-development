@@ -25,20 +25,20 @@ public class RecipeList extends ListActivity implements OnItemClickListener  {
 	public void onCreate( Bundle savedInstanceState ) {
 		super.onCreate( savedInstanceState );
 		setContentView( R.layout.recipe_list );
-		
+		String a = "";
 		SharedPreferences recipeNames = getSharedPreferences( MainMenu.RecipeNamesPref, RecipeEntry.MODE_WORLD_READABLE);
-		String[] recipeList = recipeNames.getString( MainMenu.RecipeNamesPref, "Make New" ).split( "," );
+		String[] recipeList = recipeNames.getString( MainMenu.RecipeNamesPref, null ).split( "," );
 		for(String recipe: recipeList)
-		{
-			_RecipeListContents.add( recipe );			
+		{	
+			if( a.contains( recipe ) )
+				_RecipeListContents.add( recipe );			
 		}
-		String[] anarray = {"hey","you"};
 		
 		recipeListView = (ListView) findViewById(android.R.id.list);
 		recipeListView.setAdapter( new ListViewAdapter(this) );
 		recipeListView.setTextFilterEnabled(true);
 		recipeListView.setOnItemClickListener( this );
-		
+		onSearchRequested();
 	}
 	
 	//setListAdapter( new ListViewAdapter(this) );
@@ -80,12 +80,13 @@ public class RecipeList extends ListActivity implements OnItemClickListener  {
 			else 
 			{
 				contents = (ListContent) view.getTag();
+				
 			}
 	        
 			contents.text.setText( _RecipeListContents.get(position) );
 			return view;
 		}
-	
+		
 		static class ListContent {
 			TextView text;
 		}
